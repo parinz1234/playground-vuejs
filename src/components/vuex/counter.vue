@@ -8,21 +8,17 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   methods: {
-    increment() {
-      // commit `increment` action
-      this.$store.commit('increment')
-    },
-    decrement() {
-      // commit `decrement` action
-      this.$store.commit('decrement')
-    },
+    ...mapMutations({
+      increment: 'counter/increment',
+      decrement: 'counter/decrement',
+    }),
   },
   computed: {
     ...mapState({
-      count: state => state.count,
+      count: (state) => state.counter.count,
     }),
   },
 }
