@@ -8,10 +8,14 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 import Counter from './components/vuex/counter.vue'
+import Feed from './components/vuex/feed.vue'
 
 const router = new VueRouter({
   mode: 'history',
-  routes: [{ path: '/vuex/counter', component: Counter }],
+  routes: [
+    { path: '/vuex/counter', component: Counter },
+    { path: '/vuex/feed', component: Feed },
+  ],
 })
 
 new Vue({
